@@ -11,14 +11,14 @@ mongoose.set('strictQuery', true);
 app.use(express.json())
 app.use(cors()) 
 app.use(bodyparser.json())
-app.use(route)
+app.use(route) 
 app.use(bodyparser.urlencoded({
-  extended:true
-}))
+  extended:true 
+})) 
 
 
 
-mongoose.connect(process.env.Key ,
+mongoose.connect('mongodb+srv://santosjonaras:jonatas@cluster0.mndv9mp.mongodb.net/?retryWrites=true&w=majority' , 
 { useNewUrlParser: true ,
   useUnifiedtopology:true
 
@@ -27,7 +27,7 @@ mongoose.connect(process.env.Key ,
 .catch((err)=> console.log(err  +  "  erro ao conectar ao banco de dados"))
 
   
-
+ 
 const PORT=4000
 
 app.listen(PORT,()=>{

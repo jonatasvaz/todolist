@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Api from '../service/Api'
 import { Header,Title,Inputs,Result,Table } from './TodoStyle'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-
-
+import EditIcon from '@mui/icons-material/Edit';
+import userApi from '../features/Slice';
 
 const Todolist = () => {
    const[name,setName]=useState('')
@@ -11,6 +11,13 @@ const Todolist = () => {
    const[description,setDescrição]=useState('')
    const[allnotes,setNotesAll]=useState([]) 
    const[auth,setAuth]=useState(false)
+
+ // const [addUser] =userApi.useAddUserMutation()
+ 
+console.log(allnotes ) 
+  
+
+
 
 useEffect(()=>{
 
@@ -35,9 +42,17 @@ useEffect(()=>{
 },[auth])
 
 
+
+
+
   async function handleSubmit(e){
    e.preventDefault()
     console.log("submit")
+
+   
+    setName('')
+    setEmail('')
+    setDescrição(' ') 
     
     const response= await Api.post(`/`,{
       name,
@@ -51,7 +66,9 @@ useEffect(()=>{
      setAuth(true)
    }
     
-   setNotesAll([...allnotes,response])
+   
+
+
 
  }
 
@@ -83,6 +100,8 @@ useEffect(()=>{
    <Result>
       <div>
        {allnotes.map((item,key)=>{
+        
+         
         return(
             
            <Table key={key}>
@@ -92,6 +111,9 @@ useEffect(()=>{
             <div onClick={()=>handleDelete(item._id)} >
                <DeleteOutlineIcon/>
             </div>
+             <div>
+             <EditIcon/>
+             </div>
            
            </Table>
         
