@@ -49,6 +49,27 @@ module.exports={
       
             res.status(200).json({ message: 'Usuário removido com sucesso!' })
          
+      },
+      async update(req,res){
+        const id= req.params.id
+
+        const  {name,email,description}=req.body
+ 
+        const Person={
+          name,
+          email,
+          description
+        }
+
+        const updatePerson= await auth.updateOne({_id:id},Person)
+        
+          if(!updatePerson){
+            res.status(422).json({ message: 'Usuário não encontrado!' })
+            return
+          }
+
+      
+          res.status(200).json({ message: 'Usuário atualizado  com sucesso!' })
       }
 
    

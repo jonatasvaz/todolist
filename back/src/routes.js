@@ -8,4 +8,6 @@ route.get('/',controller.read)
 
 route.delete('/:id',controller.delete)
 
+route.put('/:id',controller.update)
+
 module.exports=route

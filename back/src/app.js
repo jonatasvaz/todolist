@@ -21,7 +21,7 @@ app.use(bodyparser.urlencoded({
 mongoose.connect('mongodb+srv://santosjonaras:jonatas@cluster0.mndv9mp.mongodb.net/?retryWrites=true&w=majority' , 
 { useNewUrlParser: true ,
   useUnifiedtopology:true
-
+  
 })
 .then(()=> console.log('conectou ao banco de dados'))
 .catch((err)=> console.log(err  +  "  erro ao conectar ao banco de dados"))

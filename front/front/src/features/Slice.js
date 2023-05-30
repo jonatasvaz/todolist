@@ -11,10 +11,7 @@
                 method:"Post",
             })
         }),
-        getUser:builder.query({
-            query:() =>""
-        
-        })
+       
     })
  })
 

@@ -75,9 +75,17 @@ useEffect(()=>{
   async function handleDelete(id){
  await   Api.delete(`/${id}`)
   
- setAuth(true)
+ setAuth(true) 
 }
 
+async function handleUpdate(id){
+  await Api.put(`/${id}`,{
+    name,
+    email,
+    description
+  })
+  setAuth(true)
+}
   
   return (
 <Header>
@@ -109,9 +117,9 @@ useEffect(()=>{
             <div>{item.email}</div>
             <div>{item.description}</div>
             <div onClick={()=>handleDelete(item._id)} >
-               <DeleteOutlineIcon/>
+               <DeleteOutlineIcon/> 
             </div>
-             <div>
+             <div onClick={()=>handleUpdate(item._id)}>
              <EditIcon/>
              </div>
            
