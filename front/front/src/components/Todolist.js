@@ -47,7 +47,7 @@ useEffect(()=>{
 
   async function handleSubmit(e){
    e.preventDefault()
-    console.log("submit")
+    console.log("submit" ) 
 
    
     setName('')
@@ -79,11 +79,18 @@ useEffect(()=>{
 }
 
 async function handleUpdate(id){
-  await Api.put(`/${id}`,{
+
+     
+    const update=  await Api.put(`/${id}`,{
     name,
     email,
     description
   })
+  if(update){
+    setName('')
+    setEmail('')
+    setDescrição('')
+  }
   setAuth(true)
 }
   

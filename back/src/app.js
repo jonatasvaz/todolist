@@ -31,5 +31,5 @@ mongoose.connect('mongodb+srv://santosjonaras:jonatas@cluster0.mndv9mp.mongodb.n
 const PORT=4000
 
 app.listen(PORT,()=>{
-    console.log(`servidor rodando na porta ${PORT} `)
+    console.log(`servidor rodando na porta ${PORT} ` )
 })

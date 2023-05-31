@@ -31,6 +31,11 @@ li{
      color: #fff;
      
 }
+@media (min-width: 380px) and (max-width:480px){
+  li{
+    font-size: 16px;
+  }
+}
 
 `
 export const Inputs=styled.div`
@@ -75,6 +80,42 @@ margin-top: 40px;
         transition:  0.7s;
   
  
+    }
+
+    @media (min-width: 481px) and (max-width:768px ) {
+        form{
+          display: block;
+          
+        }
+      input{
+        display: block;
+        justify-content: center;
+        margin: 30px auto;
+      
+      }
+      button{
+        display: block;
+        margin: auto;
+      }
+    }
+
+
+    @media (min-width: 380px) and (max-width:480px){
+      form{
+          display: block;
+          
+        }
+      input{
+        display: block;
+        justify-content: center;
+        margin: 30px auto;
+      
+      }
+      button{
+        display: block;
+        margin: auto;
+      }
+    
     }
 
 `
